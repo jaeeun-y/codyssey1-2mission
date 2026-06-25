@@ -42,9 +42,9 @@ secret.key 파일	$AGENT_HOME/api_keys/secret.key 존재, 내용: agent_api_key_
 ---
 
 
-
+사용한 가상환경
 ```
-
+% docker run --platform linux/amd64 -it -v $(pwd):/workspace -w /workspace ubuntu:22.04 /bin/bash
 ```
 
 
