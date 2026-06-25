@@ -1,8 +1,6 @@
 # codyssey1-2mission
 
 
-실행 계정	root가 아닌 일반 사용자 
-
 AGENT_HOME	필수 환경변수 설정  
 ```
 % export AGENT_HOME="HOME/agent_home"
@@ -59,4 +57,14 @@ secret.key 파일	$AGENT_HOME/api_keys/secret.key 존재, 내용: agent_api_key_
 % mkdir -p AGENT_HOME/upload_files  
 % mkdir -p AGENT_HOME/api_keys  
 % mkdir -p AGENT_HOME/logs   
+```
+
+
+```
+ % chmod +x monitor.sh
+ % ./monitor.sh &
+[1] 13773
+ % =========================================
+ 관제 스크립트가 시작되었습니다. (2초 주기)
+ 로그 저장 위치: /logs/monitor.log
 ```
