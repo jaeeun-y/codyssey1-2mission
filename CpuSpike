@@ -10,7 +10,7 @@ CPU_MAX_OCCUPY 변경 전후 비교
 ### 발생 현상
 장애가 어떻게 관측되었는지 서술
 
-
+<< CPU_MAX_OCCUPY = 10 >>
 -------------------
     PID %CPU %MEM   RSS
      18  0.2  0.0  1964
@@ -58,6 +58,10 @@ ps, top 출력 결과
 
 ### 조치 내용
 환경변수 조정 등 임시 조치와 그 결과
+
+<< CPU_MAX_OCCUPY = 95
+    MULTI_THREAD_ENABLE = true >>
+
 
 ###결과 확인 
 
