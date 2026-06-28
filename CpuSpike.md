@@ -10,6 +10,25 @@ CPU_MAX_OCCUPY 변경 전후 비교
 ### 발생 현상
 장애가 어떻게 관측되었는지 서술
 
+```
+
+2026-06-28 12:45:16,574 [INFO] [CpuWorker] Started. Maximum CPU Limit: 95%
+2026-06-28 12:45:16,574 [INFO] [CpuWorker] Current Load: 5.00%
+2026-06-28 12:45:19,693 [INFO] [CpuWorker] Current Load: 13.77%
+2026-06-28 12:45:22,811 [INFO] [CpuWorker] Current Load: 15.18%
+2026-06-28 12:45:25,930 [INFO] [CpuWorker] Current Load: 21.22%
+2026-06-28 12:45:29,051 [INFO] [CpuWorker] Current Load: 25.20%
+2026-06-28 12:45:32,171 [INFO] [CpuWorker] Current Load: 33.98%
+2026-06-28 12:45:35,291 [INFO] [CpuWorker] Current Load: 35.02%
+2026-06-28 12:45:38,411 [INFO] [CpuWorker] Current Load: 44.32%
+2026-06-28 12:45:41,533 [INFO] [CpuWorker] Current Load: 48.46%
+2026-06-28 12:45:44,652 [INFO] [CpuWorker] Current Load: 52.70%
+2026-06-28 12:45:44,754 [CRITICAL] [CpuWorker] CPU Threshold Violated! (52.699999999999996%).
+
+```
+
+```
+
 << CPU_MAX_OCCUPY = 10 >>
 -------------------
     PID %CPU %MEM   RSS
@@ -45,6 +64,11 @@ CPU_MAX_OCCUPY 변경 전후 비교
      19  1.4  0.0 16432
 -------------------
 
+.
+..
+...
+
+```
 
 ### 재현 경로 및 증거
 로그/명령어 출력/스크린 샷 등 객관적 증거
