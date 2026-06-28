@@ -12,18 +12,7 @@ CPU_MAX_OCCUPY 변경 전후 비교
 
 ```
 
-2026-06-28 12:45:16,574 [INFO] [CpuWorker] Started. Maximum CPU Limit: 95%
-2026-06-28 12:45:16,574 [INFO] [CpuWorker] Current Load: 5.00%
-2026-06-28 12:45:19,693 [INFO] [CpuWorker] Current Load: 13.77%
-2026-06-28 12:45:22,811 [INFO] [CpuWorker] Current Load: 15.18%
-2026-06-28 12:45:25,930 [INFO] [CpuWorker] Current Load: 21.22%
-2026-06-28 12:45:29,051 [INFO] [CpuWorker] Current Load: 25.20%
-2026-06-28 12:45:32,171 [INFO] [CpuWorker] Current Load: 33.98%
-2026-06-28 12:45:35,291 [INFO] [CpuWorker] Current Load: 35.02%
-2026-06-28 12:45:38,411 [INFO] [CpuWorker] Current Load: 44.32%
-2026-06-28 12:45:41,533 [INFO] [CpuWorker] Current Load: 48.46%
-2026-06-28 12:45:44,652 [INFO] [CpuWorker] Current Load: 52.70%
-2026-06-28 12:45:44,754 [CRITICAL] [CpuWorker] CPU Threshold Violated! (52.699999999999996%).
+<img width="666" height="317" alt="Screenshot 2026-06-28 at 9 47 16 PM" src="https://github.com/user-attachments/assets/61caf3ef-f23f-424e-aa81-87584a52340a" />
 
 ```
 
