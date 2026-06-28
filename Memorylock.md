@@ -11,8 +11,31 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 
 ---
 
-## 🔍 발생 현상
+## 📁 발생 현상
 장애가 어떻게 관측되었는지 서술
+
+```bash
+
+<<export MEMORY_LIMIT=50>>
+# 메모리 보호 임계치 초과 시, MemoryGuard 작동
+
+
+12:50:51,455 [INFO] [MemoryWorker] Current Heap: 25MB  
+12:50:54,511 [INFO] [MemoryWorker] Current Heap: 50MB  
+
+12:50:54,511 [CRITICAL] [MemoryGuard] Memory limit exceeded (50MB >= 50MB) / (Recommend Over 256MB)  
+12:50:54,511 [CRITICAL] [MemoryGuard] Self-terminating process 1014 to prevent system instability.  
+>>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
+Killed
+
+```
+
+---
+
+### 📁 재현 경로 및 증거
+로그/명령어 출력/스크린 샷 등 객관적 증거
+
+monitor.sh 관제 로그 데이터
 
 ```
 
@@ -26,28 +49,19 @@ end
 
 ```
 
-```bash
+---
 
-<<export MEMORY_LIMIT=50>> # 메모리 보호 임계치 초과 시, MemoryGuard 작동
+### 📁 근본 원인
+장애의 기술적 원인 분석
 
+---
 
+### 📁 조치 내용
+환경변수 조정 등 임시 조치와 그 결과
 
-12:50:51,455 [INFO] [MemoryWorker] Current Heap: 25MB  
-12:50:54,511 [INFO] [MemoryWorker] Current Heap: 50MB  
-
-12:50:54,511 [CRITICAL] [MemoryGuard] Memory limit exceeded (50MB >= 50MB) / (Recommend Over 256MB)  
-12:50:54,511 [CRITICAL] [MemoryGuard] Self-terminating process 1014 to prevent system instability.  
->>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
-Killed
-
-```
-
-
-```
-  
 <<export MEMORY_LIMIT=256>>
 
-
+```
 12:54:24,819 [INFO] [MemoryWorker] Current Heap: 25MB
 12:54:27,876 [INFO] [MemoryWorker] Current Heap: 50MB
 12:54:30,933 [INFO] [MemoryWorker] Current Heap: 75MB
@@ -62,29 +76,4 @@ Killed
   
 >>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
 Killed
-  
 ```
-
----
-
-
-
-### 재현 경로 및 증거
-로그/명령어 출력/스크린 샷 등 객관적 증거
-
-monitor.sh 관제 로그 데이터
-
-
-
-### 근본 원인
-장애의 기술적 원인 분석
-
-### 조치 내용
-환경변수 조정 등 임시 조치와 그 결과
-
-###결과 확인 
-
-Before 
-
-After
-
