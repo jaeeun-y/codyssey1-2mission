@@ -19,7 +19,8 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 # 메모리 보호 임계치 초과 시, MemoryGuard 작동
 
 
-<img width="792" height="266" alt="Screenshot 2026-06-28 at 10 00 44 PM" src="https://github.com/user-attachments/assets/23434dbb-ce2c-4fe0-84d2-1a8fd275be55" />
+<img width="792" height="266" alt="Screenshot 2026-06-28 at 10 00 44 PM" src="https://github.com/user-attachments/assets/f8696bd9-5bd8-46a7-bb14-a92cc8c2bffa" />
+
 
 
 ---
@@ -53,19 +54,6 @@ end
 
 <<export MEMORY_LIMIT=256>>
 
-```
-12:54:24,819 [INFO] [MemoryWorker] Current Heap: 25MB
-12:54:27,876 [INFO] [MemoryWorker] Current Heap: 50MB
-12:54:30,933 [INFO] [MemoryWorker] Current Heap: 75MB
-.
-.
-.
-12:54:52,333 [INFO] [MemoryWorker] Current Heap: 250MB  
-12:54:55,389 [INFO] [MemoryWorker] Current Heap: 275MB  
-    
-12:54:55,389 [CRITICAL] [MemoryGuard] Memory limit exceeded (275MB >= 256MB) / (Recommend Over 256MB)  
-12:54:55,389 [CRITICAL] [MemoryGuard] Self-terminating process 1018 to prevent system instability.  
-  
->>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
-Killed
-```
+
+<img width="792" height="324" alt="Screenshot 2026-06-28 at 10 04 34 PM" src="https://github.com/user-attachments/assets/b45630c3-5437-4997-977d-04de42089482" />
+
