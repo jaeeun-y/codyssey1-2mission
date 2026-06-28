@@ -33,4 +33,5 @@ ps, top 출력 결과
 
 << CPU_MAX_OCCUPY = 10 >>  
 
-![Uploading Screenshot 2026-06-28 at 9.31.31 PM.png…]()
+<img width="254" height="648" alt="Screenshot 2026-06-28 at 9 31 31 PM" src="https://github.com/user-attachments/assets/3161f9f2-a711-4a26-8ad8-a0d241a42076" />
+
