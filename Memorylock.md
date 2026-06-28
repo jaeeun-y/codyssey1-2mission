@@ -7,18 +7,20 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 환경변수(MEMORY_LIMIT)를 조정하여 프로그램이 더 오래 생존하는 것을 확인하고, 그 결과를 리포트에 Before & After로 기록한다.  
 
 ```
-% export MEMORY_LIMIT=50 # 메모리 보호 임계치 초과 시, MemoryGuard 작동
+% export MEMORY_LIMIT=50
+# 메모리 보호 임계치 초과 시, MemoryGuard 작동
 
-before
-2026-06-25 12:50:51,455 [INFO] [MemoryWorker] Current Heap: 25MB  
-2026-06-25 12:50:54,511 [INFO] [MemoryWorker] Current Heap: 50MB  
-  
-2026-06-25 12:50:54,511 [CRITICAL] [MemoryGuard] Memory limit exceeded (50MB >= 50MB) / (Recommend Over 256MB)  
-2026-06-25 12:50:54,511 [CRITICAL] [MemoryGuard] Self-terminating process 1014 to prevent system instability.  
+### before
+12:50:51,455 [INFO] [MemoryWorker] Current Heap: 25MB  
+12:50:54,511 [INFO] [MemoryWorker] Current Heap: 50MB  
+
+12:50:54,511 [CRITICAL] [MemoryGuard] Memory limit exceeded (50MB >= 50MB) / (Recommend Over 256MB)  
+12:50:54,511 [CRITICAL] [MemoryGuard] Self-terminating process 1014 to prevent system instability.  
 >>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
 Killed
 
-
+```
+```
 % export MEMORY_LIMIT=256
 
 after
