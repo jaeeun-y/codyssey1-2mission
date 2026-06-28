@@ -14,21 +14,13 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 ## 📁 발생 현상
 장애가 어떻게 관측되었는지 서술
 
-```bash
 
 <<export MEMORY_LIMIT=50>>
 # 메모리 보호 임계치 초과 시, MemoryGuard 작동
 
 
-12:50:51,455 [INFO] [MemoryWorker] Current Heap: 25MB  
-12:50:54,511 [INFO] [MemoryWorker] Current Heap: 50MB  
+<img width="792" height="266" alt="Screenshot 2026-06-28 at 10 00 44 PM" src="https://github.com/user-attachments/assets/23434dbb-ce2c-4fe0-84d2-1a8fd275be55" />
 
-12:50:54,511 [CRITICAL] [MemoryGuard] Memory limit exceeded (50MB >= 50MB) / (Recommend Over 256MB)  
-12:50:54,511 [CRITICAL] [MemoryGuard] Self-terminating process 1014 to prevent system instability.  
->>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
-Killed
-
-```
 
 ---
 
