@@ -6,6 +6,7 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 프로세스가 예고 없이 중단되었을 때 프로그램 실행 로그를 분석하여 메모리 임계치 초과로 인해 애플리케이션의 메모리 보호 정책(MemoryGuard)에 따라 강제 종료되었음을 나타내는 핵심 로그를 식별한다.  
 환경변수(MEMORY_LIMIT)를 조정하여 프로그램이 더 오래 생존하는 것을 확인하고, 그 결과를 리포트에 Before & After로 기록한다.  
 
+
 ```
 % export MEMORY_LIMIT=50
 # 메모리 보호 임계치 초과 시, MemoryGuard 작동
@@ -20,6 +21,7 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 Killed
 
 ```
+
 ```
 % export MEMORY_LIMIT=256
 
@@ -38,7 +40,7 @@ after
   
 >>> [SYSTEM] SELF-TERMINATED (Memory Limit Exceeded) <<<  
 Killed
-
+```
 
 
 
@@ -65,3 +67,5 @@ ps, top 출력 결과
 Before 
 
 After
+
+```
