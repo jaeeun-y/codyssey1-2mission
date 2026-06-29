@@ -1,23 +1,11 @@
-PID 존재 증거(ps -ef | grep …)
-CPU/MEM 변화 정체 증거(top -H 또는 ps -L)
-마지막 로그 지점("WAITING… BLOCKED")
-스레드/락 대기 추론 근거
-
-프로세스가 종료되지 않고 살아있으나(PID 존재), CPU/메모리 변화가 없고 로그 기록도 멈춘 무응답 상태임을 식별한다.
-프로그램 로그의 마지막 기록을 분석하여, 서로 다른 스레드가 상대방의 자원을 무한히 기다리는 상태임을 논리적으로 증명한다.
-환경변수(MULTI_THREAD_ENABLE)를 조정하여 데드락 재현/회피 비교 결과를 리포트에 기록한다.
 
 ### 발생 현상
 장애가 어떻게 관측되었는지 서술
 
+<img width="869" height="311" alt="Screenshot 2026-06-29 at 7 41 30 PM" src="https://github.com/user-attachments/assets/f93b9653-ae08-446c-a667-14c2dcb86642" />
 
+<img width="530" height="134" alt="Screenshot 2026-06-29 at 7 44 27 PM" src="https://github.com/user-attachments/assets/f8c43039-d8e5-4eec-a7f3-7ecb21c4814b" />
 
-### 재현 경로 및 증거
-로그/명령어 출력/스크린 샷 등 객관적 증거
-
-monitor.sh 관제 로그 데이터
-
-ps, top 출력 결과
 
 ### 근본 원인
 장애의 기술적 원인 분석
@@ -25,8 +13,48 @@ ps, top 출력 결과
 ### 조치 내용
 환경변수 조정 등 임시 조치와 그 결과
 
-###결과 확인 
 
-Before 
+<<1>>
+export MEMORY_LIMIT=500
+export CPU_MAX_OCCUPY=50
+export MULTI_THREAD_ENABLE=true
+  
+export DEADLOCK_TRIGGER=true  # ★ 이 값이 데드락 방지 로직을 활성화
 
-After
+
+<<2>>
+export MULTI_THREAD_ENABLE=false # 싱글 스레드 모드로 전환
+
+```
+
+ PID %CPU %MEM   RSS
+     47  0.2  0.0  2144
+     48  1.9  1.8 300168
+-------------------
+    PID %CPU %MEM   RSS
+     47  0.2  0.0  2144
+     48  2.1  2.1 351376
+-------------------
+    PID %CPU %MEM   RSS
+     47  0.2  0.0  2144
+     48  2.1  2.4 402584
+-------------------
+    PID %CPU %MEM   RSS
+     47  0.1  0.0  2048
+     48  2.1  2.5 421324
+-------------------
+    PID %CPU %MEM   RSS
+     47  0.1  0.0  2048
+     48  2.1  2.8 472532
+-------------------
+    PID %CPU %MEM   RSS
+     47  0.1  0.0  2048
+     48  2.1  0.0 12476
+-------------------
+    PID %CPU %MEM   RSS
+     47  0.1  0.0  2048
+     48  2.1  0.0 12476
+^C
+[3] + Stopped
+
+```
