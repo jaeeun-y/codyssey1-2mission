@@ -1,5 +1,3 @@
-# codyssey1-2mission
-
 
 ## AGENT_HOME	필수 환경변수 설정   
 = export AGENT_HOME="$HOME/agent_home"
