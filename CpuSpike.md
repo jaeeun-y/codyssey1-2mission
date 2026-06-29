@@ -1,16 +1,13 @@
-CPU 사용률 급상승 구간(top/ps/관제) 캡처
-종료 로그("WATCHDOG… SIGTERM" 등)
-
-
-관제 툴과 로그를 통해 시스템 전체 부하가 아닌 특정 프로세스(agent-leak-app)의 CPU 사용률이 급격히 상승하는 구간을 식별한다.
-프로그램 실행 로그 분석을 통해, 해당 종료가 오류가 아닌 과점유 방지 정책(Watchdog)에 따른 시스템 보호 조치였음을 입증한다.
-환경변수(CPU_MAX_OCCUPY)를 조정하여 프로세스 종료 여부 또는 생존 시간 변화를 확인하고, 그 결과를 리포트에 Before & After로 기록한다.
 
 
 ## 📁 발생 현상
 장애가 어떻게 관측되었는지 서술
 
-<< CPU_MAX_OCCUPY = 95
+  
+tail -f $AGENT_LOG_DIR/system.log
+
+
+<< CPU_MAX_OCCUPY = 98  
     MULTI_THREAD_ENABLE = true >>
 
 <img width="666" height="317" alt="Screenshot 2026-06-28 at 9 47 16 PM" src="https://github.com/user-attachments/assets/61caf3ef-f23f-424e-aa81-87584a52340a" />
@@ -20,9 +17,7 @@ CPU 사용률 급상승 구간(top/ps/관제) 캡처
 ## 📁 재현 경로 및 증거
 로그/명령어 출력/스크린 샷 등 객관적 증거
 
-monitor.sh 관제 로그 데이터
 
-ps, top 출력 결과
 
 ## 📁 근본 원인
 장애의 기술적 원인 분석
