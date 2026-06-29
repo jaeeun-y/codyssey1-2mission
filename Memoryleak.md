@@ -11,7 +11,7 @@ monitor.sh를 활용하여, 대상 프로세스(agent-leak-app)의 물리 메모
 
 
 <<export MEMORY_LIMIT=50>>
-# 메모리 보호 임계치 초과 시, MemoryGuard 작동
+### 메모리 보호 임계치 초과 시, MemoryGuard 작동
 
 
 <img width="792" height="266" alt="Screenshot 2026-06-28 at 10 00 44 PM" src="https://github.com/user-attachments/assets/f8696bd9-5bd8-46a7-bb14-a92cc8c2bffa" />
