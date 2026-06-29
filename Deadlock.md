@@ -2,6 +2,8 @@
 ### 발생 현상
 장애가 어떻게 관측되었는지 서술
 
+tail -f $AGENT_LOG_DIR/system.log
+
 <img width="869" height="311" alt="Screenshot 2026-06-29 at 7 41 30 PM" src="https://github.com/user-attachments/assets/f93b9653-ae08-446c-a667-14c2dcb86642" />
 
 <img width="530" height="134" alt="Screenshot 2026-06-29 at 7 44 27 PM" src="https://github.com/user-attachments/assets/f8c43039-d8e5-4eec-a7f3-7ecb21c4814b" />
