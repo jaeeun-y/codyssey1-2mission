@@ -1,8 +1,5 @@
 
-# 🛠️ Docker Agent Environment Setup & Monitoring Guide
-
-`my-agent-test` 도커 컨테이너 환경에서 애플리케이션을 구동하기 위한 필수 조건을 정리한 가이드입니다.
-
+# Docker Agent Environment Setup & Monitoring Guide
 ---
 
 ## 1. 필수 환경변수 및 보안 키 설정 (Environment Variables)
