@@ -47,7 +47,6 @@ echo "agent_api_key_test" > $AGENT_HOME/api_keys/secret.key
 ### 애플리케이션 백그라운드 실행
 
 ```bash
-./agent-leak-app-arm64 > $AGENT_LOG_DIR/system.log 2>&1 &
 
 nohup $AGENT_HOME/bin/agent-leak-app-arm64 > $AGENT_LOG_DIR/app_boot.log 2>&1 &
 
