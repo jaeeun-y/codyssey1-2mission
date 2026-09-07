@@ -14,7 +14,19 @@
 | **`AGENT_KEY_PATH`** | `"$AGENT_HOME/api_keys"` | `secret.key` 보안 파일이 위치하는 경로 (생성 필요) |
 | **`AGENT_LOG_DIR`** | `"$AGENT_HOME/logs"` | 앱 실행 로그(`system.log`)가 기록될 디렉터리 (쓰기 권한 필요) |
 
-  
+
+```
+
+sudo sh -c "cat << 'EOF' >> /home/agent-admin/.bashrc
+
+export AGENT_HOME=/home/agent-admin/agent-app
+export AGENT_PORT=15034
+export AGENT_UPLOAD_DIR=\$AGENT_HOME/upload_files
+export AGENT_KEY_PATH=\$AGENT_HOME/api_keys/secret.key
+export AGENT_LOG_DIR=/var/log/agent-app
+EOF"
+
+```
 
 ```bash
 # 디렉터리 생성 및 키 텍스트 주입
