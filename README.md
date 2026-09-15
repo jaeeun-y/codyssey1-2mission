@@ -127,6 +127,8 @@ check_firewall() {
             if ! systemctl is-active --quiet ufw; then
                 log "[WARNING] UFW firewall is not active"
             fi
+       fi
+  fi
 }
  
 # ── 4. 리소스 사용량 측정 ──────────────────────────
